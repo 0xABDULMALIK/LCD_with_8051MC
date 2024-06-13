@@ -1,28 +1,27 @@
-MOV A, #38H //Use 2 lines and 5x8 matrix,last 5 bits for cursor
+MOV A, #38H 
 ACALL CMND
-MOV A, #0FH // Display ON, cursor ON, cursor blinking ON
+MOV A, #0FH 
 ACALL CMND
-MOV A, #01H //Clear display and set DDRAM address to 0 in AC.
+MOV A, #01H 
 ACALL CMND
-MOV A, #06H //Moving direction is to increment cursor
+MOV A, #06H /
 ACALL CMND
-// Here initialization ends
-// below we want to print 16X2 LCD
-MOV A, #49D // Number 1
+
+MOV A, #49D 
 ACALL DISP
-MOV A, #54D // Number 6
+MOV A, #54D 
 ACALL DISP
-MOV A, #88D // letter X
+MOV A, #88D 
 ACALL DISP
-MOV A, #50D // 2
+MOV A, #50D 
 ACALL DISP
-MOV A, #32D // space
+MOV A, #32D 
 ACALL DISP
-MOV A, #76D // L
+MOV A, #76D 
 ACALL DISP
-MOV A, #67D // C
+MOV A, #67D 
 ACALL DISP
-MOV A, #68D // D
+MOV A, #68D 
 ACALL DISP
 HERE: SJMP HERE
 CMND: 
